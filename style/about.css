@@ -1,0 +1,84 @@
+.company-history {
+  display: flex;
+  align-items: end;
+  margin-top: 100px;
+}
+
+.image-section {
+  flex: 1;
+  max-block-size: 800px;
+}
+
+.landscape-image {
+  width: 100%;
+  border-radius: 0 40px 0 0;
+  object-fit: cover;
+  max-block-size: 800px;
+}
+
+.text-section {
+  flex: 1;
+  padding: 50px 30px 50px 30px;
+  align-content: end;
+  background-color: #f9f9f9;
+  block-size: 700px;
+}
+
+.company-title {
+  font-size: 60px;
+  font-weight: lighter;
+}
+
+.company-subtitle {
+  font-size: 30px;
+  font-weight: normal;
+  margin-bottom: 35px;
+  color: #777;
+}
+
+.company-description {
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+/* .read-more-btn {
+  display: inline-block;
+  background-color: #6ca748;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: #5c9540;
+} */
+
+@media ( width <= 570px) {
+
+  .image-section {
+    display: none;
+  }
+
+  .company-title {
+    font-size: 23px;
+  }
+
+  .company-subtitle {
+    font-size: 18px;
+  }
+
+  .company-description {
+    font-size: 16px;
+  }
+
+  .text-section {
+    text-align: center;
+    block-size: auto;
+  }
+
+}
