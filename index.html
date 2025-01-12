@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./style/gallery.css" />
     <link rel="stylesheet" href="./style/contacts.css" />
     <link rel="stylesheet" href="./style/faq.css" />
-    <link rel="stylesheet" href="./style/review.css">
+    <link rel="stylesheet" href="./style/review.css" />
     <script src="./index.js"></script>
   </head>
   <body class="page">
@@ -27,10 +27,10 @@
           <a href="#" class="menu__link" id="main">Главная</a>
         </li>
         <li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
-        <li class="menu__item">
+        <!-- <li class="menu__item">
           <a href="#contacts" class="menu__link">Контакты</a>
-        </li>
-        <li class="menu__item"><a href="#" class="menu__link">Услуги</a></li>
+        </li> -->
+        <!-- <li class="menu__item"><a href="#" class="menu__link">Услуги</a></li> -->
         <li class="menu__item">
           <a href="price.html" class="menu__link">Цены</a>
         </li>
@@ -39,15 +39,13 @@
         <ul class="mobile-menu__list">
           <li class="mobile-menu__item"><a href="#">Главная</a></li>
           <li class="mobile-menu__item"><a href="#">О нас</a></li>
-          <li class="mobile-menu__item"><a href="#contacts">Контакты</a></li>
-          <li class="mobile-menu__item"><a href="#">Услуги</a></li>
+          <!-- <li class="mobile-menu__item"><a href="#contacts">Контакты</a></li> -->
+          <!-- <li class="mobile-menu__item"><a href="#">Услуги</a></li> -->
           <li class="mobile-menu__item"><a href="price.html">Цены</a></li>
         </ul>
       </div>
     </header>
     <main>
-      <section class="m">
-      </section>
       <section class="cover">
         <div class="cover-content">
           <span class="cover-title">
@@ -56,7 +54,6 @@
           <sapn class="cover-description">
             <p>Ландшафтный дизайн</p>
           </sapn>
-          <!-- <button class="cover-button"></button> -->
         </div>
         <div class="overlay"></div>
       </section>
@@ -115,6 +112,7 @@
               </div>
             </li>
           </ul>
+        </div>
       </section>
       <section class="advantages fade-in">
         <h2 class="advantages__title">Почему именно мы?</h2>
@@ -319,22 +317,10 @@
           </li>
         </ul>
         <div id="modal" class="modal">
-          <img
-            src="./mat/xmark.svg"
-            alt="Close"
-            class="close"
-          />
-          <img
-            src="./mat/arrowL.svg"
-            id="prevBtn"
-            class="arrow prev"
-          />
+          <img src="./mat/xmark.svg" alt="Close" class="close" />
+          <img src="./mat/arrowL.svg" id="prevBtn" class="arrow prev" />
           <img id="modal-img" class="modal-content" src="" />
-          <img
-            src="./mat/arrowR.svg"
-            id="nextBtn"
-            class="arrow next"
-          />
+          <img src="./mat/arrowR.svg" id="nextBtn" class="arrow next" />
         </div>
       </section>
       <section class="faq">
@@ -387,7 +373,7 @@
           </li>
         </ul>
       </section>
-      <section class="contacts-section fade-in">
+      <section class="contacts-section fade-in" id="footer">
         <div class="contacts">
           <div class="info" id="contacts">
             <div class="contacts-title">
@@ -397,7 +383,7 @@
               <div class="item-icon">
                 <img src="./mat/phone.svg" alt="Телефон" class="icon-image" />
               </div>
-              <span class="item-text">8 800 700-00-00</span>
+              <span class="item-text">+7 (3466) 29-18-47</span>
             </div>
             <div class="item">
               <div class="item-icon">
@@ -411,7 +397,9 @@
               <div class="item-icon">
                 <img src="./mat/pin.svg" alt="Адрес" class="icon-image" />
               </div>
-              <span class="item-text">г. Нижневартовск, ул. </span>
+              <span class="item-text"
+                >г. Нижневартовск, ул. Северная, 25Б
+              </span>
             </div>
             <a href="#top" class="social-button arrow-btn">
               <img src="./mat/arrow.svg" class="contact-arrow" />
@@ -419,14 +407,11 @@
           </div>
           <div class="map-container">
             <iframe
-              src="https://yandex.ru/map-widget/v1/?lang=ru_RU&scroll=true&source=constructor-api&um=constructor%3A31cdd432a7199880b25e463b4c57967f12a67b8f5917cc29dc13056a9269340d"
+              src="https://yandex.ru/map-widget/v1/?ll=76.602549%2C60.954637&mode=search&oid=1911631249&ol=biz&z=14.88"
               class="map-iframe"
             ></iframe>
           </div>
           <div class="socials">
-            <a href="#" class="social-button">
-              <img src="./mat/inst.svg" alt="Instagram" class="social-icon" />
-            </a>
             <a href="#" class="social-button">
               <img
                 src="./mat/telegram.svg"
@@ -447,6 +432,93 @@
           </div>
         </div>
       </section>
+      <div class="wave-container">
+        <button class="btn" id="openModalBtn">
+          <img src="./mat/phone.svg" class="contact-modal_img" />
+        </button>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+      </div>
+      <div id="contact-modal" class="contatc-modal">
+        <div class="contact-modal_content">
+          <img
+            src="./mat/BXmark.svg"
+            class="contact-close"
+            id="closeModalBtn"
+          />
+          <h2 class="contact-modal_title">Наши контакты</h2>
+          <div class="contact-info">
+            <ul class="contact-info_list">
+              <li>
+                <strong class="contact-modal_phone">+7 (3466) 29-18-47</strong>
+              </li>
+              <li class="contact-info_list_item">
+                <strong>Адрес:</strong>
+                <p class="contact-modal_des">г. Нижневартовск, Северная, 25Б</p>
+              </li>
+              <li class="contact-info_list_item">
+                <strong>E-mail:</strong>
+                <a href="mailto:superflora-nv@mail.ru" class="contact-modal_des">superflora-nv@mail.ru</a>
+              </li>
+              <li class="contact-info_list_item">
+                <strong>График работы:</strong>
+                <p class="contact-modal_des">Ежедневно, с 8:00 до 20:00</p>
+              </li>
+              <li class="contact-info_list_item">
+                <strong>Мы в сетях:</strong>
+                <ul class="social-icons">
+                  <li>
+                    <a href="https://vk.com/superflora__nv" target="_blank">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="rgba(106, 106, 106, 0.9)"
+                        class="contact-modal-social_img"
+                      >
+                        <path
+                          d="M13.162 18.994c.609 0 .858-.406.851-.915-.031-1.917.714-2.949 2.059-1.604 1.488 1.488 1.796 2.519 3.603 2.519h3.2c.808 0 1.126-.26 1.126-.668 0-.863-1.421-2.386-2.625-3.504-1.686-1.565-1.765-1.602-.313-3.486 1.801-2.339 4.157-5.336 2.073-5.336h-3.981c-.772 0-.828.435-1.103 1.083-.995 2.347-2.886 5.387-3.604 4.922-.751-.485-.407-2.406-.35-5.261.015-.754.011-1.271-1.141-1.539-.629-.145-1.241-.205-1.809-.205-2.273 0-3.841.953-2.95 1.119 1.571.293 1.42 3.692 1.054 5.16-.638 2.556-3.036-2.024-4.035-4.305-.241-.548-.315-.974-1.175-.974h-3.255c-.492 0-.787.16-.787.516 0 .602 2.96 6.72 5.786 9.77 2.756 2.975 5.48 2.708 7.376 2.708z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://t.me/superflora_sever" target="_blank">
+                      <svg
+                        viewBox="0 0 24 24"
+                        style="fill-rule: evenodd"
+                        fill="rgba(106, 106, 106, 0.9)"
+                        class="contact-modal-social_img"
+                      >
+                        <path
+                          d="M18.384,22.779c0.322,0.228 0.737,0.285 1.107,0.145c0.37,-0.141 0.642,-0.457 0.724,-0.84c0.869,-4.084 2.977,-14.421 3.768,-18.136c0.06,-0.28 -0.04,-0.571 -0.26,-0.758c-0.22,-0.187 -0.525,-0.241 -0.797,-0.14c-4.193,1.552 -17.106,6.397 -22.384,8.35c-0.335,0.124 -0.553,0.446 -0.542,0.799c0.012,0.354 0.25,0.661 0.593,0.764c2.367,0.708 5.474,1.693 5.474,1.693c0,0 1.452,4.385 2.209,6.615c0.095,0.28 0.314,0.5 0.603,0.576c0.288,0.075 0.596,-0.004 0.811,-0.207c1.216,-1.148 3.096,-2.923 3.096,-2.923c0,0 3.572,2.619 5.598,4.062Zm-11.01,-8.677l1.679,5.538l0.373,-3.507c0,0 6.487,-5.851 10.185,-9.186c0.108,-0.098 0.123,-0.262 0.033,-0.377c-0.089,-0.115 -0.253,-0.142 -0.376,-0.064c-4.286,2.737 -11.894,7.596 -11.894,7.596Z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://api.whatsapp.com/send/?phone=79129393005"
+                      target="_blank"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="rgba(106, 106, 106, 0.9)"
+                        class="contact-modal-social_img"
+                      >
+                        <path
+                          d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"
+                        />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </main>
   </body>
 </html>

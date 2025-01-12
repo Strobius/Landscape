@@ -23,11 +23,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("prevBtn");
   const nextBtn = document.getElementById("nextBtn");
 
-  if (!modal || !modalImg || !closeModalBtn || !prevBtn || !nextBtn) {
-    console.error("Элементы модального окна не найдены в DOM.");
-    return;
-  }
-
   function openModal(imgElement) {
     currentImageIndex = galleryImages.findIndex((img) => img === imgElement);
 
@@ -132,6 +127,52 @@ document.addEventListener("DOMContentLoaded", () => {
       mobileMenu.classList.toggle("show");
     });
   } 
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const button = document.getElementById('openModalBtn');
+  const waveContainer = document.querySelector('.wave-container');
+  const footerSection = document.getElementById('footer');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        waveContainer.classList.add('hidden');
+
+      } else {
+        waveContainer.classList.remove('hidden');
+      }
+    });
+  });
+
+  observer.observe(footerSection);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  const openModalBtn = document.getElementById('openModalBtn');
+  const modal = document.getElementById('contact-modal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  // const waveContainer = document.querySelector('.wave-container');
+
+  openModalBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+    document.body.style.overflow = "hidden";
+    waveContainer.classList.add('hidden');
+  });
+
+  closeModalBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = "";
+    waveContainer.classList.remove('hidden');
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+      document.body.style.overflow = "";
+      waveContainer.classList.add('hidden');
+    }
+  });
 });
 
 document.addEventListener("scroll", revealOnScroll);
